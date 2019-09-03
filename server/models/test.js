@@ -1,8 +1,10 @@
-module.exports = function (sequelize, DataTypes) {
-    return sequelize.define('test', {
-        testdata: DataTypes.STRING
-    });
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const test = sequelize.define('test', {
+    testdata: DataTypes.STRING
+  }, {});
+  test.associate = function(models) {
+    // associations can be defined here
+  };
+  return test;
 };
-
-/////////////////////////////////////////////////
-//! the define method [xx.define()] is a Sequelize method that will map model properties in the server file to a table in Postgres. 
